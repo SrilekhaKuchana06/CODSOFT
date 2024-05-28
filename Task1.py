@@ -12,7 +12,9 @@ while True:
         print("Enter your task(s): (Enter 'exit' to finish)")
         while 'exit' not in task_list:
             task = input("* ")
-            if task != 'exit':
+            if task in task_list:
+                print("Task already exists.")
+            elif task != 'exit':
                 task_list.append(task)
             else:
                 break
@@ -48,7 +50,8 @@ while True:
         inp3 = [int(i) for i in inp3]
         for i in inp3:
             task_list.pop(i-1)
-        print("Task removed successfully")
+        print("Task removed successfully!")
+        print("Your updated TO-DO LIST is as follows: ")
         to_do_list(task_list)
     if option == '6':
         print("***** GOODBYE *****")
